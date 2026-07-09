@@ -1,1 +1,165 @@
-body{font-family:Arial;text-align:center;padding:40px;background:#eef}h1{color:#0077cc}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f9ff;
+    color:#333;
+}
+
+header{
+    background:#0088cc;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h2{
+    font-size:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("images/banner.jpg") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero h3{
+    margin:15px 0;
+    font-size:28px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:40px;
+    margin:10px;
+    display:inline-block;
+    font-weight:bold;
+}
+
+.call{
+    background:#0077ff;
+    color:white;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+section{
+    padding:70px 8%;
+}
+
+section h2{
+    text-align:center;
+    color:#0088cc;
+    margin-bottom:30px;
+    font-size:36px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+#contact{
+    text-align:center;
+}
+
+footer{
+    background:#0088cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:10px;
+}
+
+nav a{
+display:block;
+margin:10px 0;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero h3{
+font-size:22px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
