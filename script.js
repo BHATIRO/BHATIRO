@@ -1,4 +1,6 @@
-// Smooth Scroll
+// =============================
+// Smooth Scroll Menu
+// =============================
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -7,45 +9,113 @@ document.querySelectorAll('nav a').forEach(link => {
 
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth'
+                behavior: "smooth"
             });
         }
     });
 });
 
-// Header Shadow
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    header.style.boxShadow = window.scrollY > 50
-        ? "0 4px 10px rgba(0,0,0,0.2)"
-        : "none";
+// =============================
+// Sticky Header Shadow
+// =============================
+window.addEventListener("scroll", function () {
+
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 50) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+
 });
 
+// =============================
 // Booking Form → WhatsApp
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+// =============================
 
-    const name = document.getElementById("name").value;
-    const mobile = document.getElementById("mobile").value;
-    const address = document.getElementById("address").value;
-    const quantity = document.getElementById("jarQuantity").value;
-    const date = document.getElementById("deliveryDate").value;
-    const time = document.getElementById("deliveryTime").value;
-    const message = document.getElementById("message").value;
+const bookingForm = document.getElementById("bookingForm");
 
-    const text =
+if (bookingForm) {
+
+bookingForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let address=document.getElementById("address").value;
+let quantity=document.getElementById("jarQuantity").value;
+let date=document.getElementById("deliveryDate").value;
+let time=document.getElementById("deliveryTime").value;
+let message=document.getElementById("message").value;
+
+let whatsappMessage=
 `🛒 *New Water Booking*
 
-👤 Customer Name: ${name}
-📞 Mobile: ${mobile}
-🏠 Address: ${address}
-💧 Jar Quantity: ${quantity}
-📅 Delivery Date: ${date}
-⏰ Delivery Time: ${time}
-📝 Message: ${message}`;
+👤 Customer Name : ${name}
 
-    window.open(
-        "https://wa.me/919929962397?text=" + encodeURIComponent(text),
-        "_blank"
-    );
+📞 Mobile Number : ${mobile}
+
+🏠 Address : ${address}
+
+💧 Water Jar : ${quantity}
+
+📅 Delivery Date : ${date}
+
+⏰ Delivery Time : ${time}
+
+📝 Message : ${message}`;
+
+let url="https://wa.me/919929962397?text="+encodeURIComponent(whatsappMessage);
+
+window.open(url,"_blank");
+
+bookingForm.reset();
+
+});
+
+}
+
+// =============================
+// Gallery Image Click Zoom
+// =============================
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+
+img.addEventListener("click",function(){
+
+window.open(this.src,"_blank");
+
+});
+
+});
+
+// =============================
+// Fade Animation
+// =============================
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section").forEach(sec=>{
+
+sec.style.opacity="0";
+sec.style.transform="translateY(40px)";
+sec.style.transition="0.8s";
+
+observer.observe(sec);
+
 });
