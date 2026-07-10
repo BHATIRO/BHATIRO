@@ -1,245 +1,268 @@
-/* ==========================
-   BHATI R.O. WEBSITE
-========================== */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-background:#f5f9fc;
-color:#333;
-line-height:1.6;
+    background:#f5f9ff;
+    color:#333;
+    line-height:1.6;
 }
 
 /* Header */
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#0077cc;
-padding:15px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:999;
-box-shadow:0 2px 10px rgba(0,0,0,.15);
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:#0099cc;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    z-index:1000;
+}
+
+header.sticky{
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
 
 .logo{
-color:#fff;
-font-size:28px;
-font-weight:bold;
+    font-size:28px;
+    font-weight:bold;
 }
 
 nav a{
-color:#fff;
-text-decoration:none;
-margin-left:25px;
-font-weight:bold;
-transition:.3s;
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+    transition:.3s;
 }
 
 nav a:hover{
-color:#ffeb3b;
+    color:#ffe600;
 }
 
 /* Hero */
 
 .hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("images/banner.jpg") center/cover no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("images/banner.jpg") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
 }
 
-.overlay h1{
-font-size:55px;
-color:#fff;
+.hero h1{
+    font-size:55px;
 }
 
-.overlay p{
-font-size:22px;
-color:#fff;
-margin:20px 0;
+.hero h2{
+    margin:15px 0;
+    color:#fff;
 }
 
-.btn{
-display:inline-block;
-background:#00b894;
-color:#fff;
-padding:14px 35px;
-border-radius:40px;
-text-decoration:none;
-font-size:18px;
-transition:.3s;
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
 }
 
-.btn:hover{
-background:#008c6d;
-transform:scale(1.05);
+.hero-buttons a{
+    display:inline-block;
+    margin:10px;
+    padding:15px 30px;
+    border-radius:40px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-/* Section */
+.call-btn{
+    background:#0077ff;
+}
+
+.whatsapp-btn{
+    background:#25D366;
+}
+
+/* Sections */
 
 section{
-padding:90px 8%;
+    padding:90px 8%;
 }
 
 section h2{
-font-size:35px;
-text-align:center;
-margin-bottom:35px;
-color:#0077cc;
+    text-align:center;
+    color:#0099cc;
+    margin-bottom:30px;
+    font-size:36px;
 }
 
 /* Cards */
 
+.service-box,
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .card{
-background:#fff;
-padding:30px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-}/* ==========================
-   GALLERY
-========================== */
+    transform:translateY(-8px);
+}
+
+/* Gallery */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
 }
 
 .gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-transition:.4s;
-cursor:pointer;
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* ==========================
-   BOOKING FORM
-========================== */
+/* Booking */
 
 form{
-max-width:700px;
-margin:auto;
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+form label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
 }
 
 form input,
 form textarea,
 form select{
-width:100%;
-padding:15px;
-margin:12px 0;
-border:1px solid #ddd;
-border-radius:10px;
-font-size:16px;
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    border-radius:8px;
 }
 
-form textarea{
-height:120px;
-resize:none;
+.book-btn{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    background:#25D366;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
 }
 
-form button{
-width:100%;
-padding:16px;
-border:none;
-background:#25D366;
-color:#fff;
-font-size:18px;
-font-weight:bold;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
+.book-btn:hover{
+    background:#1fa851;
 }
 
-form button:hover{
-background:#128C7E;
-}
+/* Contact */
 
-/* ==========================
-   CONTACT
-========================== */
-
-#contact{
-text-align:center;
-}
-
-#contact p{
-font-size:20px;
-margin:10px 0;
+.contact-box{
+    text-align:center;
+    font-size:20px;
 }
 
 iframe{
-margin-top:20px;
-border-radius:15px;
+    margin-top:20px;
+    border-radius:15px;
 }
 
-/* ==========================
-   FOOTER
-========================== */
+/* Footer */
 
 footer{
-background:#0077cc;
-color:#fff;
-text-align:center;
-padding:20px;
-margin-top:40px;
+    background:#0099cc;
+    color:#fff;
+    text-align:center;
+    padding:25px;
 }
 
-/* WhatsApp Floating Button */
+/* Floating WhatsApp */
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
-height:60px;
-background:#25D366;
-color:#fff;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index:999;
+.floating-whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 5px 10px rgba(0,0,0,.3);
 }
 
-.whatsapp:hover{
-transform:scale(1.1);
+/* Responsive */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+padding:15px;
+}
+
+nav{
+margin-top:10px;
+}
+
+nav a{
+display:block;
+margin:8px 0;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero h2{
+font-size:22px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero-buttons a{
+display:block;
+margin:10px auto;
+width:220px;
+}
+
 }
