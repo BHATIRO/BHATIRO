@@ -1,165 +1,245 @@
+/* ==========================
+   BHATI R.O. WEBSITE
+========================== */
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    background:#f5f9ff;
-    color:#333;
+background:#f5f9fc;
+color:#333;
+line-height:1.6;
 }
+
+/* Header */
 
 header{
-    background:#0088cc;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 8%;
-    position:sticky;
-    top:0;
-    z-index:1000;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#0077cc;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-header h2{
-    font-size:28px;
+.logo{
+color:#fff;
+font-size:28px;
+font-weight:bold;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
+color:#fff;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+transition:.3s;
 }
 
 nav a:hover{
-    color:yellow;
+color:#ffeb3b;
 }
+
+/* Hero */
 
 .hero{
-    height:90vh;
-    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url("images/banner.jpg") center/cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("images/banner.jpg") center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero h1{
-    font-size:55px;
+.overlay h1{
+font-size:55px;
+color:#fff;
 }
 
-.hero h3{
-    margin:15px 0;
-    font-size:28px;
+.overlay p{
+font-size:22px;
+color:#fff;
+margin:20px 0;
 }
 
-.hero p{
-    font-size:20px;
-    margin-bottom:30px;
+.btn{
+display:inline-block;
+background:#00b894;
+color:#fff;
+padding:14px 35px;
+border-radius:40px;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
 }
 
-.buttons a{
-    text-decoration:none;
-    padding:14px 28px;
-    border-radius:40px;
-    margin:10px;
-    display:inline-block;
-    font-weight:bold;
+.btn:hover{
+background:#008c6d;
+transform:scale(1.05);
 }
 
-.call{
-    background:#0077ff;
-    color:white;
-}
-
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
+/* Section */
 
 section{
-    padding:70px 8%;
+padding:90px 8%;
 }
 
 section h2{
-    text-align:center;
-    color:#0088cc;
-    margin-bottom:30px;
-    font-size:36px;
+font-size:35px;
+text-align:center;
+margin-bottom:35px;
+color:#0077cc;
 }
 
+/* Cards */
+
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+background:#fff;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
 }
 
+.card:hover{
+transform:translateY(-10px);
+}/* ==========================
+   GALLERY
+========================== */
+
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:.4s;
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+transition:.4s;
+cursor:pointer;
 }
 
 .gallery img:hover{
-    transform:scale(1.05);
+transform:scale(1.05);
 }
+
+/* ==========================
+   BOOKING FORM
+========================== */
+
+form{
+max-width:700px;
+margin:auto;
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+form input,
+form textarea,
+form select{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+form textarea{
+height:120px;
+resize:none;
+}
+
+form button{
+width:100%;
+padding:16px;
+border:none;
+background:#25D366;
+color:#fff;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+form button:hover{
+background:#128C7E;
+}
+
+/* ==========================
+   CONTACT
+========================== */
 
 #contact{
-    text-align:center;
+text-align:center;
 }
 
-footer{
-    background:#0088cc;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-}
-
-nav{
-margin-top:10px;
-}
-
-nav a{
-display:block;
+#contact p{
+font-size:20px;
 margin:10px 0;
 }
 
-.hero h1{
-font-size:36px;
+iframe{
+margin-top:20px;
+border-radius:15px;
 }
 
-.hero h3{
-font-size:22px;
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+background:#0077cc;
+color:#fff;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 
-.hero p{
-font-size:18px;
+/* WhatsApp Floating Button */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:999;
 }
 
+.whatsapp:hover{
+transform:scale(1.1);
 }
