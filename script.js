@@ -54,3 +54,26 @@ window.addEventListener("scroll",function(){
         header.style.background="#0077cc";
     }
 });
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let address=document.getElementById("address").value;
+let quantity=document.getElementById("jarQuantity").value;
+let date=document.getElementById("deliveryDate").value;
+let time=document.getElementById("deliveryTime").value;
+let message=document.getElementById("message").value;
+
+let text=`🛒 *New Water Booking*
+
+👤 Name: ${name}
+📞 Mobile: ${mobile}
+🏠 Address: ${address}
+💧 Jar Quantity: ${quantity}
+📅 Delivery Date: ${date}
+⏰ Delivery Time: ${time}
+📝 Message: ${message}`;
+
+window.open("https://wa.me/919929962397?text="+encodeURIComponent(text),"_blank");
+});
