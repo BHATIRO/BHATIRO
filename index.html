@@ -105,34 +105,45 @@ Dholipal, Hanumangarh.
 </div>
 
 </section>
+  <section id="booking">
+  <h2>🛒 Water Booking / पानी की बुकिंग</h2>
 
-<section id="booking">
+  <form id="bookingForm">
 
-<h2>Book Water</h2>
+    <label>👤 Customer Name / ग्राहक का नाम</label>
+    <input type="text" placeholder="Enter Your Name / अपना नाम लिखें" required>
 
-<form id="bookingForm">
+    <label>📞 Mobile Number / मोबाइल नंबर</label>
+    <input type="tel" placeholder="Enter Mobile Number / मोबाइल नंबर" required>
 
-<input type="text" id="name" placeholder="Your Name" required>
+    <label>🏠 Full Address / पूरा पता</label>
+    <textarea placeholder="Enter Full Address / पूरा पता लिखें" required></textarea>
 
-<input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <label>💧 Water Jar Quantity / पानी के जार की संख्या</label>
+    <select required>
+      <option value="">Select Quantity / संख्या चुनें</option>
+      <option>1 Jar</option>
+      <option>2 Jars</option>
+      <option>3 Jars</option>
+      <option>4 Jars</option>
+      <option>5 Jars</option>
+      <option>10+ Jars</option>
+    </select>
 
-<textarea id="address" placeholder="Delivery Address" required></textarea>
+    <label>📅 Delivery Date / डिलीवरी की तारीख</label>
+    <input type="date" required>
 
-<select id="product">
-<option>20L Jar</option>
-<option>5L Bottle</option>
-<option>2L Bottle</option>
-<option>1L Bottle</option>
-<option>500ml Bottle</option>
-</select>
-  <label for="deliveryDate">Delivery Date</label>
-<input type="date" id="deliveryDate" name="deliveryDate" required>
+    <label>⏰ Delivery Time / डिलीवरी का समय</label>
+    <input type="time" required>
 
-<input type="number" id="qty" placeholder="Quantity">
+    <label>📝 Special Instructions / विशेष निर्देश</label>
+    <textarea placeholder="Any Message / कोई विशेष संदेश"></textarea>
 
-<button type="submit">
-Book on WhatsApp
-</button>
+    <button type="submit">📦 Book Now / अभी बुक करें</button>
+
+  </form>
+</section>
+
 
 </form>
 
