@@ -1,46 +1,56 @@
+// ==========================
+// BHATI R.O. WEBSITE
+// ==========================
+
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let address = document.getElementById("address").value;
+    let product = document.getElementById("product").value;
+    let qty = document.getElementById("qty").value;
+
+    let message =
+`📦 *New Water Booking*
+
+👤 Name: ${name}
+
+📞 Mobile: ${mobile}
+
+📍 Address: ${address}
+
+💧 Product: ${product}
+
+🧴 Quantity: ${qty}
+
+Website: bhatiro.in`;
+
+    let url =
+"https://wa.me/919929962397?text="
++ encodeURIComponent(message);
+
+    window.open(url,"_blank");
+});
+
 // Smooth Scroll
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
+document.querySelectorAll('nav a').forEach(link=>{
+    link.addEventListener('click',function(e){
         e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-
-        if(target){
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+        document.querySelector(this.getAttribute('href'))
+        .scrollIntoView({
+            behavior:'smooth'
+        });
     });
 });
 
-// Header Shadow on Scroll
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
+// Header Shadow
+window.addEventListener("scroll",function(){
+    let header=document.querySelector("header");
 
-    if(window.scrollY > 50){
-        header.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+    if(window.scrollY>50){
+        header.style.background="#005fa3";
     }else{
-        header.style.boxShadow = "none";
+        header.style.background="#0077cc";
     }
-});
-
-// Fade-in Animation
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-},{
-    threshold:0.2
-});
-
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "all 0.8s ease";
-    observer.observe(section);
 });
